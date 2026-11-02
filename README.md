@@ -16,7 +16,7 @@ The project takes visual and tonal inspiration from the theatrical gothic atmosp
 
 ## Live website
 
-[View The Vampire Lestat gallery]((https://maria-d-soares-dev.github.io/the-cat-lestat-gallery/))
+[View The Vampire Lestat gallery](https://maria-d-soares-dev.github.io/the-cat-lestat-gallery/)
 
 ## Features
 
