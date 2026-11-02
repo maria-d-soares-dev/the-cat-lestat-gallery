@@ -126,35 +126,6 @@ The project includes:
 - Responsive text and spacing
 - Theme colors controlled through reusable CSS variables
 
-## Project structure
-
-```text
-the-vampire-lestat-gallery/
-│
-├── index.html
-├── styles.css
-├── script.js
-├── README.md
-│
-├── assets/
-│   ├── lestat-gallery-light.png
-│   └── lestat-gallery-dark.png
-│
-└── images/
-    ├── lestat-sleepingat-lying-with-me-on-bed.jpeg
-    ├── lestat-guarding-my-bed.jpeg
-    ├── lestat-getting-his-head-squeezed-by-me.jpeg
-    ├── lestat-sleeping-on-my-keyboard.jpeg
-    ├── lestat-feet-pics.jpeg
-    ├── sleepy-lestat.jpeg
-    ├── lestat-sleeping-smiling.jpeg
-    ├── lestat-on-the-toilet-seat.jpeg
-    ├── lestat-on-the-bathroom-sink.jpeg
-    ├── lestat-looking-annoyed-while-held-by-me.jpeg
-    ├── me-and-lestat.jpeg
-    ├── lestat-passed-out-in-my-bed.jpeg
-    └── lestat-lowquality-with-a-pink-bow.jpeg
-```
 
 ## What I practised
 
