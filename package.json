@@ -1,10 +1,12 @@
 {
-  "name": "prettytoggler",
+  "name": "the-cat-lestat-gallery",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "description": "A responsive gothic photo gallery dedicated to Lestat the cat.",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "optimize": "node scripts/optimize-images.js"
   },
-  "private": true
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
 }
