@@ -1018,3 +1018,219 @@ then continue at the top of the next column.
         animation-iteration-count: 1 !important;
     }
 }
+
+/* ========================================
+   IMAGE LIGHTBOX
+======================================== */
+
+.photo-card {
+    cursor: zoom-in;
+}
+
+.photo-card:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 5px;
+}
+
+.lightbox {
+    width: min(1100px, calc(100% - 32px));
+    max-width: 1100px;
+    max-height: calc(100vh - 32px);
+    margin: auto;
+    padding: 0;
+
+    overflow: visible;
+
+    color: var(--primary-text);
+    background: transparent;
+    border: 0;
+}
+
+.lightbox::backdrop {
+    background-color: rgb(5 3 3 / 88%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 55px minmax(0, 1fr) 55px;
+    align-items: center;
+
+    max-height: calc(100vh - 32px);
+    padding: 24px;
+
+    background-color: var(--surface-background);
+    border: 1px solid var(--strong-border);
+    border-radius: 5px;
+    box-shadow:
+        0 30px 90px rgb(0 0 0 / 65%),
+        0 0 60px rgb(122 32 41 / 18%);
+}
+
+.lightbox-figure {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    max-height: calc(100vh - 80px);
+    margin: 0;
+}
+
+.lightbox-image {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 220px);
+    margin: auto;
+
+    object-fit: contain;
+
+    border: 1px solid var(--border-color);
+    box-shadow: 0 16px 45px rgb(0 0 0 / 35%);
+}
+
+.lightbox-caption {
+    padding: 20px 10px 4px;
+    text-align: center;
+}
+
+.lightbox-caption h2 {
+    margin: 0 0 8px;
+
+    color: var(--primary-text);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 500;
+}
+
+.lightbox-caption p {
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: var(--secondary-text);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.lightbox-close,
+.lightbox-navigation {
+    display: grid;
+    place-items: center;
+
+    color: var(--primary-text);
+    background-color: var(--surface-background);
+    border: 1px solid var(--border-color);
+
+    cursor: pointer;
+
+    transition:
+        color 150ms ease,
+        background-color 150ms ease,
+        border-color 150ms ease,
+        transform 150ms ease;
+}
+
+.lightbox-close:hover,
+.lightbox-navigation:hover {
+    color: var(--button-text);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.lightbox-close:focus-visible,
+.lightbox-navigation:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+.lightbox-close {
+    position: absolute;
+    z-index: 3;
+    top: 13px;
+    right: 13px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.lightbox-navigation {
+    width: 44px;
+    height: 70px;
+    padding: 0;
+
+    border-radius: 3px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.lightbox-previous {
+    justify-self: start;
+}
+
+.lightbox-next {
+    justify-self: end;
+}
+
+body:has(.lightbox[open]) {
+    overflow: hidden;
+}
+
+/* ========================================
+   LIGHTBOX MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+    .lightbox {
+        width: calc(100% - 20px);
+        max-height: calc(100vh - 20px);
+    }
+
+    .lightbox-content {
+        grid-template-columns: 44px minmax(0, 1fr) 44px;
+
+        max-height: calc(100vh - 20px);
+        padding: 54px 8px 14px;
+    }
+
+    .lightbox-figure {
+        max-height: calc(100vh - 88px);
+    }
+
+    .lightbox-image {
+        max-height: calc(100vh - 250px);
+    }
+
+    .lightbox-navigation {
+        width: 38px;
+        height: 60px;
+
+        font-size: 2.4rem;
+    }
+
+    .lightbox-caption {
+        padding-inline: 4px;
+    }
+
+    .lightbox-caption h2 {
+        font-size: 1.45rem;
+    }
+
+    .lightbox-caption p {
+        font-size: 0.9rem;
+    }
+}
